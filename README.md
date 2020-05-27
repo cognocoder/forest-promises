@@ -1,2 +1,2 @@
-# pptree
-Promise Progress Tree: create and track progress of promises dependency graphs
+# forest-promises
+Forest Promises: create and track dependency forests of promises 
