@@ -1,0 +1,28 @@
+{
+  "name": "forest-promises",
+  "version": "1.0.0",
+  "description": "Forest Promises: create and track dependency forests of promises",
+  "main": "main.mjs",
+  "scripts": {
+    "run": "node drivers/main.mjs",
+    "start": "node drivers/main.mjs",
+    "test": "node test/main.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cognocoder/forest-promises.git"
+  },
+  "keywords": [
+    "Dependency",
+    "Forest",
+    "Promises",
+    "Promise",
+    "Tree"
+  ],
+  "author": "cognocoder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cognocoder/forest-promises/issues"
+  },
+  "homepage": "https://github.com/cognocoder/forest-promises#readme"
+}
