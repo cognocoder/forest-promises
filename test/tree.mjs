@@ -1,25 +1,31 @@
 
-import Tree from '../source/tree.mjs'
+import Tree from './../tree.mjs'
 
-async function run() {
-  let toggle = false
+export default [
+  async function() {
+    let toggle = false
 
-  let executor = (resolve, reject) => {
-    setTimeout(value => {
-      if (!toggle)
-        resolve(toggle = !toggle)
-      else 
-        reject(toggle = !toggle)
-    }, 1000)
+    let executor = (resolve, reject) => {
+      setTimeout(() => {
+        if (!toggle)
+          resolve(toggle = !toggle)
+        else 
+          reject(toggle = !toggle)
+      }, 100)
+    }
+    console.log()
+
+    new Tree(new Promise(executor), '1. fulfilled', 50)
+
+    new Tree(new Promise(executor), '2. rejected', 50)
+      .catch(reason => console.log(` i  2. regected --> a tree was rejected.`))
+
+    new Tree(new Promise(executor), '3. not tracked')
+
+    let tree = new Tree(new Promise(executor), '4. rejected', 50)
+    tree
+      .catch(reason => console.log(` i  the tree "${tree.name}" was rejected.`))
+    
+    setTimeout(() => console.log(), 150)
   }
-  let promise, tree
-
-  new Tree(new Promise(executor), 'successful tree')
-    .then(value => console.log(` Fulfilled with value: ${value}\n`))
-  new Tree(new Promise(executor), 'rejected tree')
-    .catch(reason => console.log(` Rejected with reason: ${reason}\n`))
-  
-  console.log()
-}
-
-export default { run }
+]
