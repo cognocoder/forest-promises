@@ -1,6 +1,6 @@
 {
   "name": "forest-promises",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Forest Promises: create and track dependency forests of promises",
   "main": "main.mjs",
   "scripts": {
