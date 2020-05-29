@@ -46,6 +46,8 @@ The **`log`** method writes the tree's *status string* to the issued logger. The
 The following code showcase the stand alone usage of Trees.
 
 ```javascript
+import Tree from 'forest-promises/tree.mjs'
+
 let toggle = false
 
 let executor = (resolve, reject) => {
@@ -60,7 +62,7 @@ let executor = (resolve, reject) => {
 new Tree(new Promise(executor), '1. fulfilled', 50)
 
 new Tree(new Promise(executor), '2. rejected', 50)
-  .catch(reason => console.log(` i  2. regected --> a tree was rejected.`))
+  .catch(reason => console.log(` i  2. rejected --> a tree was rejected.`))
 
 new Tree(new Promise(executor), '3. not tracked')
 

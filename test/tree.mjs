@@ -18,7 +18,7 @@ export default [
     new Tree(new Promise(executor), '1. fulfilled', 50)
 
     new Tree(new Promise(executor), '2. rejected', 50)
-      .catch(reason => console.log(` i  2. regected --> a tree was rejected.`))
+      .catch(reason => console.log(` i  2. rejected --> a tree was rejected.`))
 
     new Tree(new Promise(executor), '3. not tracked')
 
